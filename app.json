@@ -1,5 +1,6 @@
 {
   "expo": {
+    "entryPoint": "./src/App.js",
     "name": "avengers-mobile-aplication",
     "slug": "avengers-mobile-aplication",
     "version": "1.0.0",
