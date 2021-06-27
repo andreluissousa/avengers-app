@@ -5,9 +5,9 @@ import { Gradient } from '../../components';
 function Loading() {
   return (
     <Gradient>
-      <S.ContainerLoading>
+      <S.Container>
         <S.ActivityIndicator />
-      </S.ContainerLoading>
+      </S.Container>
     </Gradient>
   );
 }

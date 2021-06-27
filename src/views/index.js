@@ -1,4 +1,5 @@
-import Character from './Character';
 import Loading from './Loading';
+import Character from './Character';
+import CharacterInfo from './CharacterInfo';
 
-export { Character, Loading };
+export { Loading, Character, CharacterInfo };

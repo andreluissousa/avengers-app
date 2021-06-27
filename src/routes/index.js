@@ -2,29 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { Character, Loading } from '../views';
+import { Loading, Character, CharacterInfo } from '../views';
 
 const Stackroutes = () => {
   const Stack = createStackNavigator();
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Fake Loading Auth
     setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+      setLoading(false);
+    }, 3000);
   }, []);
 
   return (
     <NavigationContainer>
-      {isLoading ? (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {loading ? (
           <Stack.Screen name="Loading" component={Loading} />
-        </Stack.Navigator>
-      ) : (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Character" component={Character} />
-        </Stack.Navigator>
-      )}
+        ) : (
+          <>
+            <Stack.Screen name="Character" component={Character} />
+            <Stack.Screen name="CharacterInfo" component={CharacterInfo} />
+          </>
+        )}
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
