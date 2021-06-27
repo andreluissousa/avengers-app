@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Loading from '../views/Loading';
-import Character from '../views/Character';
+import { Character, Loading } from '../views';
 
 const Stackroutes = () => {
   const Stack = createStackNavigator();
@@ -12,21 +11,17 @@ const Stackroutes = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 2000);
   }, []);
 
   return (
     <NavigationContainer>
       {isLoading ? (
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Loading"
-            component={Loading}
-            options={{ headerShown: false }}
-          />
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Loading" component={Loading} />
         </Stack.Navigator>
       ) : (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Character" component={Character} />
         </Stack.Navigator>
       )}

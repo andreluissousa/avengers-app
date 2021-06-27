@@ -18,7 +18,7 @@ api.interceptors.request.use((config) => {
 
   const configuration = {
     ...config,
-    url: `${config.url}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`,
+    url: `${config.url}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`,
   };
 
   return configuration;

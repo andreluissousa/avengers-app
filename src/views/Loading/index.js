@@ -1,27 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { ActivityIndicator } from 'react-native-paper';
+import * as S from './styles';
+import { Gradient } from '../../components';
 
-const Loading = () => {
+function Loading() {
   return (
-    <View style={styles.container}>
-      <ActivityIndicator />
-      <Text style={styles.logo}>MARVEL</Text>
-    </View>
+    <Gradient>
+      <S.ContainerLoading>
+        <S.ActivityIndicator />
+      </S.ContainerLoading>
+    </Gradient>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logo: {
-    color: '#fff',
-    fontSize: 45,
-  },
-});
-
+}
 export default Loading;
